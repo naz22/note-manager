@@ -1,22 +1,31 @@
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin: 20px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin: 20px;
 }
 
 .form {
-  text-align: left;
+    text-align: left;
 }
 
 .card {
-  text-align: left;
-  border: 1px solid #2c3e50;
-  border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
+    text-align: left;
+    border: 1px solid #990099; /* Purple Border*/
+    border-radius: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: auto;
+    margin: 10px;
+}
+
+/*Override .card css for title*/
+.card-title{
+    text-align: center;
+    font-family: 'Quattrocento', serif;
+    color: #a88116;
 }
 
 .note {
