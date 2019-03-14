@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <!--head-->
@@ -91,3 +92,98 @@
 <!--Body End-->
 </html>
 <!--File End-->
+=======
+<!DOCTYPE html>
+<html>
+<!--head-->
+<head>
+  <title>Note Management System</title>
+  <!-- Import Vue-->
+  <script src="https://unpkg.com/vue"></script>
+
+  <!-- Import Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/noteManager.css">
+
+  <!-- Import Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+</head>
+<!--Head End-->
+
+<!--Body-->
+<body>
+  <div id="app">
+    <h3>{{title}}</h3>
+    <!-- Form-->
+    <div class="form">
+      <div class="form-group">
+        <div class="form-group">
+          <label>Note Title</label>
+          <input class="form-control" type="text" v-model="note.title" placeholder="title....">
+        </div>
+        <div class="form-group">
+          <label>Note Description</label>
+          <textarea class="form-control" v-model="note.text" placeholder="description...."></textarea>
+        </div>
+      </div>
+      <button class="btn btn-primary" @click="addNote">Submit</button>
+    </div>
+    <!-- Form End -->
+
+    <!-- Note Cards-->
+    <div class="col-sm-12">
+      <!-- Loop notes-->
+      <div class="col-sm-4 note" v-for="(note, index) in notes">
+        <div class="card">
+          <button class="close" @click="removeNote(index)">&times;</button>
+          <div class="card-block">
+            <h4 class="card-title">{{note.title}}</h4>
+            <h6 class="card-subtitle mb-2 text-muted">{{note.date}}</h6>
+            <p class="card-text">{{note.text}}</p>
+          </div>
+        </div>
+      </div>
+      <!-- End loop-->
+    </div>
+    <!--Notes Cards End-->
+  </div>
+  <!-- Vue Script-->
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      title: 'Note Manager',
+      note: {
+        title: '',
+        text: ''
+      },
+      <!-- Create Sample note with a title, desc and current time-->
+      notes: [
+        {
+          title: 'Started learning Vue JS',
+          text: 'I Enjoyed learning Vue JS and understanding how Vue can be used to build User Interfaces',
+          date: new Date(Date.now()).toLocaleString()
+        }
+      ]
+    },
+    methods: {
+      addNote() {
+        let { text, title } = this.note
+        this.notes.push({
+          text,
+          title,
+          date: new Date(Date.now()).toLocaleString()
+        })
+      },
+      removeNote(index) {
+        this.notes.splice(index, 1)
+      }
+    }
+  })
+  </script>
+  <!-- Vue Script End-->
+</body>
+<!--Body End-->
+</html>
+<!--File End-->
+>>>>>>> 671c2340baa0b22050fc03450cc35e35f0dfba31
